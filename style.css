@@ -1,0 +1,1605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #314c74;
+    color: #333;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background-color: white;
+    padding: 35px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    background-color: #1d4e89;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.login-header h1 {
+    font-size: 24px;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1d4e89;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1d4e89;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #163b68;
+}
+
+#loginMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.register-link p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.register-link a {
+    color: #1d4e89;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 25px 20px;
+    }
+
+    .login-header h1 {
+        font-size: 21px;
+    }
+
+    .login-header p {
+        font-size: 13px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: Arial, sans-serif;
+}
+
+/* Login and Registration */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6fa;
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    background-color: #1f3c88;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.login-header h1 {
+    font-size: 24px;
+    color: #1f3c88;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #777;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1f3c88;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f3c88;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #172f6b;
+}
+
+#loginMessage,
+#registerMessage {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link p {
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.register-link a {
+    color: #1f3c88;
+    font-weight: bold;
+}
+
+/* Dashboard Layout */
+
+.dashboard-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ==================== SIDEBAR ==================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #17243a;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px 20px;
+    border-bottom: 1px solid #2b3850;
+}
+
+.sidebar-logo {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sidebar-logo i {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sidebar-menu {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    color: #d6d9e0;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-menu a i {
+    width: 18px;
+    min-width: 18px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sidebar-menu a span {
+    display: block;
+    white-space: nowrap;
+}
+
+.sidebar-menu a:hover {
+    background-color: #24334f;
+    color: #ffffff;
+}
+
+.sidebar-menu a.active {
+    background-color: #2f66d0;
+    color: #ffffff;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+
+.main-content {
+    margin-left: 240px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.top-header {
+    min-height: 80px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-header h1 {
+    font-size: 23px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.top-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+.admin-profile i {
+    font-size: 28px;
+    color: #1f3c88;
+}
+
+.dashboard-content {
+    padding: 25px;
+}
+
+/* Statistics Cards */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 7px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #e8eefb;
+    color: #2f66d0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+}
+
+.stat-info h3 {
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.stat-info p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Dashboard Cards */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.card-header h2 {
+    font-size: 17px;
+    color: #222;
+}
+
+.card-header a {
+    color: #2f66d0;
+    font-size: 13px;
+}
+
+/* Tables */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+table th,
+table td {
+    padding: 11px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+}
+
+table th {
+    background-color: #f5f6fa;
+    color: #444;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #fafafa;
+}
+
+/* Attendance Summary */
+
+.attendance-summary {
+    margin-bottom: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.summary-item strong {
+    color: #1f3c88;
+    font-size: 16px;
+}
+
+.summary-note {
+    display: flex;
+    gap: 10px;
+    background-color: #f5f7fb;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.summary-note i {
+    color: #2f66d0;
+    margin-top: 2px;
+}
+
+.summary-note p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 700px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+    }
+}
+
+    .top-header {
+        padding: 15px;
+    }
+
+    .dashboard-content {
+        padding: 15px;
+    }
+
+    .top-header h1 {
+        font-size: 19px;
+    }
+
+@media (max-width: 550px) {
+    .sidebar {
+        width: 65px;
+    }
+
+    .sidebar-header h2,
+    .sidebar-header p,
+    .menu-item span {
+        display: none;
+    }
+
+    .sidebar-header {
+        padding: 15px 5px;
+    }
+
+    .sidebar-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 12px 5px;
+    }
+
+    .main-content {
+        width: calc(100% - 65px);
+        margin-left: 65px;
+    }
+
+    .top-header {
+        padding: 12px;
+    }
+
+    .top-header p {
+        display: none;
+    }
+
+    .admin-profile span {
+        display: none;
+    }
+
+    .dashboard-content {
+        padding: 12px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-card {
+        padding: 15px;
+    }
+}
+
+/* Student Page */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    font-size: 19px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+.add-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f66d0;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #244fa5;
+}
+
+.search-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    width: 300px;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    color: #888;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+}
+
+.search-box input:focus {
+    border-color: #2f66d0;
+}
+
+.search-section select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+.edit-button,
+.delete-button {
+    width: 32px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.edit-button {
+    background-color: #e8eefb;
+    color: #2f66d0;
+}
+
+.delete-button {
+    background-color: #fbeaea;
+    color: #c0392b;
+}
+
+.edit-button:hover {
+    background-color: #d8e2f8;
+}
+
+.delete-button:hover {
+    background-color: #f5d5d2;
+}
+
+.student-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.form-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.close-button {
+    border: none;
+    background: none;
+    color: #777;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #c0392b;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.save-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f66d0;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #244fa5;
+}
+
+#studentFormMessage {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Teacher Page */
+
+.teacher-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.teacher-form .form-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.teacher-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.teacher-form .save-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f66d0;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.teacher-form .save-button:hover {
+    background-color: #244fa5;
+}
+
+#teacherFormMessage {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .teacher-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*subject-form*/
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-header h2 {
+    font-size: 19px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Add Button */
+
+.add-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f66d0;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #244fa5;
+}
+
+/* Search Section */
+
+.search-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    width: 300px;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    color: #888;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+}
+
+.search-box input:focus {
+    border-color: #2f66d0;
+}
+
+.search-section select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 13px;
+    outline: none;
+}
+
+/* Action Buttons */
+
+.edit-button,
+.delete-button {
+    width: 32px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.edit-button {
+    background-color: #e8eefb;
+    color: #2f66d0;
+}
+
+.delete-button {
+    background-color: #fbeaea;
+    color: #c0392b;
+}
+
+.edit-button:hover {
+    background-color: #d8e2f8;
+}
+
+.delete-button:hover {
+    background-color: #f5d5d2;
+}
+
+/* Form */
+
+.student-form,
+.teacher-form,
+.subject-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.form-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.close-button {
+    border: none;
+    background: none;
+    color: #777;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #c0392b;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.save-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2f66d0;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.save-button:hover {
+    background-color: #244fa5;
+}
+
+#studentFormMessage,
+#teacherFormMessage,
+#subjectFormMessage {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    .page-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Class Page */
+
+.class-form {
+    display: none;
+    margin-top: 20px;
+}
+
+#classFormMessage {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .class-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Attendance Page */
+
+.attendance-selection {
+    margin-bottom: 20px;
+}
+
+.attendance-selection .form-row {
+    margin-bottom: 5px;
+}
+
+.attendance-list-card {
+    margin-bottom: 20px;
+}
+
+.card-header p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.attendance-count {
+    font-size: 13px;
+    color: #555;
+}
+
+.attendance-count strong {
+    color: #2f66d0;
+    margin-left: 5px;
+}
+
+.attendance-present,
+.attendance-absent {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.attendance-present {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.attendance-absent {
+    background-color: #fbeaea;
+    color: #c0392b;
+}
+
+.attendance-present.active {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.attendance-absent.active {
+    background-color: #c0392b;
+    color: white;
+}
+
+.attendance-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#attendanceMessage {
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .attendance-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .attendance-present,
+    .attendance-absent {
+        display: block;
+        width: 75px;
+        margin-bottom: 5px;
+    }
+}
+
+/* Reports Page */
+
+.report-stats {
+    margin-bottom: 20px;
+}
+
+.report-filter-card {
+    margin-bottom: 20px;
+}
+
+.report-search {
+    width: 250px;
+}
+
+.status-eligible,
+.status-ng {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-eligible {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-ng {
+    background-color: #fbeaea;
+    color: #c0392b;
+}
+
+.view-button {
+    width: 32px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e8eefb;
+    color: #2f66d0;
+    cursor: pointer;
+}
+
+.view-button:hover {
+    background-color: #d8e2f8;
+}
+
+.subject-report-card,
+.low-attendance-card {
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .report-search {
+        width: 100%;
+    }
+
+    .card-header {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+}
+
+ /* Profile Page */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #e8eefb;
+    color: #2f66d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.profile-card h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.profile-role {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    text-align: left;
+    border-top: 1px solid #eee;
+}
+
+.profile-info div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-info span {
+    font-size: 13px;
+    color: #777;
+}
+
+.profile-info strong {
+    font-size: 13px;
+    color: #333;
+    text-align: right;
+}
+
+.password-card {
+    margin-top: 20px;
+}
+
+.password-confirm {
+    max-width: 50%;
+}
+
+#profileMessage,
+#passwordMessage {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .password-confirm {
+        max-width: 100%;
+    }
+}
+
+/* Teacher Dashboard */
+
+.teacher-welcome {
+    margin-bottom: 20px;
+}
+
+.teacher-welcome h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 7px;
+}
+
+.teacher-welcome p {
+    font-size: 13px;
+    color: #777;
+}
+
+.teacher-welcome strong {
+    color: #2f66d0;
+}
+
+.teacher-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.teacher-action-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 12px;
+    background-color: #f5f6fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    color: #333;
+    font-size: 13px;
+}
+
+.teacher-action-button i {
+    width: 18px;
+    color: #2f66d0;
+    text-align: center;
+}
+
+.teacher-action-button:hover {
+    background-color: #e8eefb;
+}
+
+.teacher-recent-card {
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .teacher-welcome h2 {
+        font-size: 18px;
+    }
+}
+
+/* Teacher Classes Page */
+
+.teacher-class-search {
+    width: 300px;
+}
+
+@media (max-width: 700px) {
+
+    .search-section select {
+        width: 100%;
+    }
+
+}
+
+/* Teacher Attendance Page */
+
+.teacher-attendance-list {
+    margin-top: 20px;
+}
+
+#teacherAttendanceMessage,
+#teacherSaveMessage {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.teacher-attendance-list .attendance-footer {
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+
+    .teacher-attendance-list .attendance-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+}
+
+/* Teacher Attendance History */
+
+.teacher-history-action {
+    width: 32px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e8eefb;
+    color: #2f66d0;
+    cursor: pointer;
+}
+
+.teacher-history-action:hover {
+    background-color: #d8e2f8;
+}
+
+/* Teacher Students Page */
+
+#teacherStudentTotal {
+    font-size: 13px;
+    color: #666;
+}
+
+@media (max-width: 700px) {
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-section select {
+        width: 100%;
+    }
+}
+
+#teacherProfileMessage,
+#teacherPasswordMessage {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.teacher-profile-id {
+    color: #555;
+}
+
+@media (max-width: 700px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Student Dashboard */
+
+.student-welcome {
+    margin-bottom: 20px;
+}
+
+.student-welcome h2 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.student-welcome p {
+    font-size: 13px;
+    color: #777;
+}
+
+.student-welcome strong {
+    color: #2f66d0;
+}
+
+.student-status-card {
+    margin-top: 20px;
+}
+
+.student-status {
+    margin: 15px 0 8px;
+}
+
+.student-status span {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.student-status-eligible {
+    background-color: #e7f5e9;
+    color: #2e7d32;
+}
+
+.student-status-ng {
+    background-color: #fdeaea;
+    color: #c0392b;
+}
+
+#studentAttendanceMessage {
+    font-size: 13px;
+    color: #777;
+}
+
+.student-attendance-card {
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .student-welcome h2 {
+        font-size: 18px;
+    }
+
+    .student-welcome p {
+        line-height: 1.8;
+    }
+}
+
+/* Student Attendance Page */
+
+.student-attendance-info {
+    margin-bottom: 20px;
+}
+
+.student-attendance-stats {
+    margin-bottom: 20px;
+}
+
+.student-attendance-table-card {
+    margin-top: 20px;
+}
+
+.attendance-rule-card {
+    margin-top: 20px;
+}
+
+.attendance-rule-card p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 700px) {
+    .student-attendance-info .profile-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Student Attendance History */
+
+#studentHistoryTotal {
+    font-size: 13px;
+    color: #666;
+}
+
+.student-history-present {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.student-history-absent {
+    color: #c0392b;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .search-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-section select {
+        width: 100%;
+    }
+}
+
+/* Student Profile */
+
+#studentProfileMessage,
+#studentPasswordMessage {
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}

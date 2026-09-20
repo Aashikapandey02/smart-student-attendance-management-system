@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item active">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Reports</h1>
+                    <p>View student attendance reports</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Attendance Reports</h2>
+                        <p>View and check attendance performance</p>
+                    </div>
+                </div>
+
+                <div class="stats-grid report-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3>35</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3>30</h3>
+                            <p>Eligible Students</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Students Below 80%</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3>86%</h3>
+                            <p>Overall Attendance</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card report-filter-card">
+
+                    <div class="card-header">
+                        <h2>Report Filters</h2>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="reportSemester">Semester</label>
+
+                            <select id="reportSemester">
+                                <option value="">All Semesters</option>
+                                <option value="1st">1st Semester</option>
+                                <option value="2nd">2nd Semester</option>
+                                <option value="3rd">3rd Semester</option>
+                                <option value="4th">4th Semester</option>
+                                <option value="5th">5th Semester</option>
+                                <option value="6th">6th Semester</option>
+                                <option value="7th">7th Semester</option>
+                                <option value="8th">8th Semester</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportSection">Section</label>
+
+                            <select id="reportSection">
+                                <option value="">All Sections</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportSubject">Subject</label>
+
+                            <select id="reportSubject">
+                                <option value="">All Subjects</option>
+                                <option value="DBMS">DBMS</option>
+                                <option value="Java Programming">Java Programming</option>
+                                <option value="Software Engineering">Software Engineering</option>
+                                <option value="Operating System">Operating System</option>
+                                <option value="Web Technology">Web Technology</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="save-button" onclick="filterReports()">
+                        <i class="fas fa-search"></i>
+                        Generate Report
+                    </button>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Student Attendance Report</h2>
+                            <p>Attendance percentage of students</p>
+                        </div>
+
+                        <div class="search-box report-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="reportSearch" placeholder="Search student...">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Total Classes</th>
+                                    <th>Present</th>
+                                    <th>Absent</th>
+                                    <th>Percentage</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="reportTableBody">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>BCS001</td>
+                                    <td>Aashika Pandey</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>25</td>
+                                    <td>23</td>
+                                    <td>2</td>
+                                    <td>92%</td>
+                                    <td>
+                                        <span class="status-eligible">Eligible</span>
+                                    </td>
+                                    <td>
+                                        <button class="view-button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>BCS002</td>
+                                    <td>Riya Sharma</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>25</td>
+                                    <td>21</td>
+                                    <td>4</td>
+                                    <td>84%</td>
+                                    <td>
+                                        <span class="status-eligible">Eligible</span>
+                                    </td>
+                                    <td>
+                                        <button class="view-button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>BCS003</td>
+                                    <td>Sita Thapa</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>25</td>
+                                    <td>19</td>
+                                    <td>6</td>
+                                    <td>76%</td>
+                                    <td>
+                                        <span class="status-ng">NG</span>
+                                    </td>
+                                    <td>
+                                        <button class="view-button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>BCS004</td>
+                                    <td>Anisha KC</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>25</td>
+                                    <td>22</td>
+                                    <td>3</td>
+                                    <td>88%</td>
+                                    <td>
+                                        <span class="status-eligible">Eligible</span>
+                                    </td>
+                                    <td>
+                                        <button class="view-button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>BCS005</td>
+                                    <td>Pratiksha Rai</td>
+                                    <td>25</td>
+                                    <td>4th</td>
+                                    <td>25</td>
+                                    <td>18</td>
+                                    <td>7</td>
+                                    <td>72%</td>
+                                    <td>
+                                        <span class="status-ng">NG</span>
+                                    </td>
+                                    <td>
+                                        <button class="view-button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card subject-report-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Subject-wise Attendance</h2>
+                            <p>Attendance summary for each subject</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Subject</th>
+                                    <th>Total Classes</th>
+                                    <th>Average Present</th>
+                                    <th>Average Absent</th>
+                                    <th>Attendance</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="subjectReportBody">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>DBMS</td>
+                                    <td>25</td>
+                                    <td>30</td>
+                                    <td>5</td>
+                                    <td>86%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Java Programming</td>
+                                    <td>25</td>
+                                    <td>29</td>
+                                    <td>6</td>
+                                    <td>83%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Software Engineering</td>
+                                    <td>24</td>
+                                    <td>31</td>
+                                    <td>4</td>
+                                    <td>88%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>Operating System</td>
+                                    <td>24</td>
+                                    <td>28</td>
+                                    <td>7</td>
+                                    <td>80%</td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>Web Technology</td>
+                                    <td>23</td>
+                                    <td>32</td>
+                                    <td>3</td>
+                                    <td>91%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card low-attendance-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Students Below 80%</h2>
+                            <p>Students who may receive NG in the respective subject</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Subject</th>
+                                    <th>Attendance</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="lowAttendanceBody">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>BCS003</td>
+                                    <td>Sita Thapa</td>
+                                    <td>DBMS</td>
+                                    <td>76%</td>
+                                    <td>
+                                        <span class="status-ng">NG</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>BCS005</td>
+                                    <td>Pratiksha Rai</td>
+                                    <td>Operating System</td>
+                                    <td>72%</td>
+                                    <td>
+                                        <span class="status-ng">NG</span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

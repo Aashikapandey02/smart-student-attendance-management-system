@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h2>Smart Attendance</h2>
+                <p>Teacher Panel</p>
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <a href="teacher.html" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-classes.html" class="menu-item">
+                    <i class="fas fa-chalkboard"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="teacher-attendance.html" class="menu-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Take Attendance</span>
+                </a>
+
+                <a href="teacher-history.html" class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="teacher-students.html" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher-profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item logout"
+                    onclick="teacherLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+
+            <header class="top-header">
+
+                <div>
+                    <h1>Teacher Dashboard</h1>
+                    <p>Manage your classes and student attendance</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="teacherNameDisplay">Teacher</span>
+                </div>
+
+            </header>
+
+
+            <!-- Dashboard Content -->
+
+            <div class="dashboard-content">
+
+                <!-- Welcome Message -->
+
+                <div class="dashboard-card teacher-welcome">
+
+                    <div>
+                        <h2>
+                            Welcome, <span id="teacherWelcomeName">
+                                Teacher
+                            </span>
+                        </h2>
+
+                        <p>
+                            Subject:
+                            <strong id="teacherSubjectDisplay">
+                                -
+                            </strong>
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="teacherClassCount">0</h3>
+                            <p>My Classes</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="teacherStudentCount">0</h3>
+                            <p>My Students</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="teacherAttendanceCount">0</h3>
+                            <p>Attendance Taken</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="teacherSubjectCount">0</h3>
+                            <p>Subject</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Dashboard Grid -->
+
+                <div class="dashboard-grid">
+
+                    <!-- Today's Classes -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <h2>Today's Classes</h2>
+
+                            <a href="teacher-classes.html">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="table-container">
+
+                            <table>
+
+                                <thead>
+                                    <tr>
+                                        <th>S.N.</th>
+                                        <th>Subject</th>
+                                        <th>Semester</th>
+                                        <th>Section</th>
+                                        <th>Period</th>
+                                        <th>Room</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="teacherClassTableBody">
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Quick Actions -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+
+
+                        <div class="teacher-actions">
+
+                            <a href="teacher-attendance.html"
+                                class="teacher-action-button">
+
+                                <i class="fas fa-clipboard-check"></i>
+
+                                <span>Take Attendance</span>
+
+                            </a>
+
+
+                            <a href="teacher-classes.html"
+                                class="teacher-action-button">
+
+                                <i class="fas fa-chalkboard"></i>
+
+                                <span>View My Classes</span>
+
+                            </a>
+
+
+                            <a href="teacher-students.html"
+                                class="teacher-action-button">
+
+                                <i class="fas fa-users"></i>
+
+                                <span>View Students</span>
+
+                            </a>
+
+
+                            <a href="teacher-history.html"
+                                class="teacher-action-button">
+
+                                <i class="fas fa-history"></i>
+
+                                <span>Attendance History</span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recent Attendance -->
+
+                <div class="dashboard-card teacher-recent-card">
+
+                    <div class="card-header">
+
+                        <h2>Recent Attendance</h2>
+
+                        <a href="teacher-history.html">
+                            View History
+                        </a>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Subject</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Present</th>
+                                    <th>Absent</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="teacherAttendanceHistoryBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

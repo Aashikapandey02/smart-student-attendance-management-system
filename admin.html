@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome to the Smart Attendance Management System</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>35</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Total Teachers</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Total Subjects</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Below 80%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Recent Attendance</h2>
+                            <a href="attendance.html">View All</a>
+                        </div>
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Subject</th>
+                                        <th>Present</th>
+                                        <th>Absent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2026-09-19</td>
+                                        <td>DBMS</td>
+                                        <td>32</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-09-19</td>
+                                        <td>Java Programming</td>
+                                        <td>30</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-09-18</td>
+                                        <td>Software Engineering</td>
+                                        <td>33</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2026-09-18</td>
+                                        <td>Operating System</td>
+                                        <td>29</td>
+                                        <td>6</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Attendance Summary</h2>
+                        </div>
+
+                        <div class="attendance-summary">
+                            <div class="summary-item">
+                                <span>Eligible Students</span>
+                                <strong>30</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Below 80%</span>
+                                <strong>5</strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Overall Attendance</span>
+                                <strong>86%</strong>
+                            </div>
+                        </div>
+
+                        <div class="summary-note">
+                            <i class="fas fa-info-circle"></i>
+                            <p>
+                                Students below 80% attendance may receive NG
+                                in the respective subject.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

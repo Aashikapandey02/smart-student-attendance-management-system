@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Students - Smart Attendance System</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="teacher.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-classes.html">
+                    <i class="fas fa-book"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="teacher-attendance.html">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Take Attendance</span>
+                </a>
+
+                <a href="teacher-history.html">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="teacher-students.html" class="active">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher-profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="#" onclick="teacherLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1>My Students</h1>
+                    <p>View students belonging to your assigned classes</p>
+                </div>
+
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="teacherNameDisplay">Teacher</span>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Student List</h2>
+                        <p>Students from your assigned classes</p>
+                    </div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input
+                            type="text"
+                            id="teacherStudentSearch"
+                            placeholder="Search by student ID or name"
+                        >
+                    </div>
+
+                    <select id="teacherStudentSemester">
+                        <option value="">All Semesters</option>
+                        <option value="1st">1st Semester</option>
+                        <option value="2nd">2nd Semester</option>
+                        <option value="3rd">3rd Semester</option>
+                        <option value="4th">4th Semester</option>
+                        <option value="5th">5th Semester</option>
+                        <option value="6th">6th Semester</option>
+                        <option value="7th">7th Semester</option>
+                        <option value="8th">8th Semester</option>
+                    </select>
+
+                    <select id="teacherStudentSection">
+                        <option value="">All Sections</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                    </select>
+                </div>
+
+                <!-- Students Table -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Students</h3>
+                            <p>Students assigned to your classes</p>
+                        </div>
+
+                        <span id="teacherStudentTotal">
+                            0 Students
+                        </span>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Gmail</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="teacherStudentsTableBody">
+                                <!-- Students will be displayed by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item active">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Attendance</h1>
+                    <p>Manage student attendance records</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Take Attendance</h2>
+                        <p>Select class details and mark student attendance</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card attendance-selection">
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="attendanceDate">Date</label>
+                            <input type="date" id="attendanceDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendanceSubject">Subject</label>
+                            <select id="attendanceSubject">
+                                <option value="">Select subject</option>
+                                <option value="DBMS">DBMS</option>
+                                <option value="Java Programming">Java Programming</option>
+                                <option value="Software Engineering">Software Engineering</option>
+                                <option value="Operating System">Operating System</option>
+                                <option value="Web Technology">Web Technology</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="attendanceSemester">Semester</label>
+                            <select id="attendanceSemester">
+                                <option value="">Select semester</option>
+                                <option value="1st">1st Semester</option>
+                                <option value="2nd">2nd Semester</option>
+                                <option value="3rd">3rd Semester</option>
+                                <option value="4th">4th Semester</option>
+                                <option value="5th">5th Semester</option>
+                                <option value="6th">6th Semester</option>
+                                <option value="7th">7th Semester</option>
+                                <option value="8th">8th Semester</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendanceSection">Section</label>
+                            <select id="attendanceSection">
+                                <option value="">Select section</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="attendancePeriod">Period</label>
+                            <select id="attendancePeriod">
+                                <option value="">Select period</option>
+                                <option value="1st Period - 6:55 AM">1st Period - 6:55 AM</option>
+                                <option value="2nd Period - 7:50 AM">2nd Period - 7:50 AM</option>
+                                <option value="3rd Period - 8:45 AM">3rd Period - 8:45 AM</option>
+                                <option value="4th Period - 9:10 AM">4th Period - 9:10 AM</option>
+                                <option value="5th Period - 10:05 AM">5th Period - 10:05 AM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="attendanceTeacher">Teacher</label>
+                            <select id="attendanceTeacher">
+                                <option value="">Select teacher</option>
+                                <option value="Mr. Sharma">Mr. Sharma</option>
+                                <option value="Ms. Thapa">Ms. Thapa</option>
+                                <option value="Mr. Neupane">Mr. Neupane</option>
+                                <option value="Ms. KC">Ms. KC</option>
+                                <option value="Mr. Rai">Mr. Rai</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <button type="button" class="save-button" onclick="loadAttendanceStudents()">
+                        <i class="fas fa-users"></i>
+                        Load Students
+                    </button>
+                </div>
+
+                <div class="dashboard-card attendance-list-card" id="attendanceListCard">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Student Attendance</h2>
+                            <p>Mark students as Present or Absent</p>
+                        </div>
+
+                        <div class="attendance-count">
+                            <span>Present:</span>
+                            <strong id="presentCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Attendance</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="attendanceTableBody">
+
+                                <tr>
+                                    <td>1</td>
+                                    <td>BCS001</td>
+                                    <td>Aashika Pandey</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>
+                                        <button class="attendance-present active"
+                                            onclick="setAttendance(this, 'present')">
+                                            Present
+                                        </button>
+
+                                        <button class="attendance-absent"
+                                            onclick="setAttendance(this, 'absent')">
+                                            Absent
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>BCS002</td>
+                                    <td>Riya Sharma</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>
+                                        <button class="attendance-present active"
+                                            onclick="setAttendance(this, 'present')">
+                                            Present
+                                        </button>
+
+                                        <button class="attendance-absent"
+                                            onclick="setAttendance(this, 'absent')">
+                                            Absent
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>BCS003</td>
+                                    <td>Sita Thapa</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>
+                                        <button class="attendance-present active"
+                                            onclick="setAttendance(this, 'present')">
+                                            Present
+                                        </button>
+
+                                        <button class="attendance-absent"
+                                            onclick="setAttendance(this, 'absent')">
+                                            Absent
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>BCS004</td>
+                                    <td>Anisha KC</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>
+                                        <button class="attendance-present active"
+                                            onclick="setAttendance(this, 'present')">
+                                            Present
+                                        </button>
+
+                                        <button class="attendance-absent"
+                                            onclick="setAttendance(this, 'absent')">
+                                            Absent
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>BCS005</td>
+                                    <td>Pratiksha Rai</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>
+                                        <button class="attendance-present active"
+                                            onclick="setAttendance(this, 'present')">
+                                            Present
+                                        </button>
+
+                                        <button class="attendance-absent"
+                                            onclick="setAttendance(this, 'absent')">
+                                            Absent
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="attendance-footer">
+                        <p id="attendanceMessage"></p>
+
+                        <button type="button" class="save-button" onclick="saveAttendance()">
+                            <i class="fas fa-save"></i>
+                            Save Attendance
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Attendance History</h2>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Subject</th>
+                                    <th>Teacher</th>
+                                    <th>Period</th>
+                                    <th>Present</th>
+                                    <th>Absent</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="attendanceHistoryBody">
+                                <tr>
+                                    <td>2026-09-19</td>
+                                    <td>DBMS</td>
+                                    <td>Mr. Sharma</td>
+                                    <td>1st Period</td>
+                                    <td>32</td>
+                                    <td>3</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2026-09-19</td>
+                                    <td>Java Programming</td>
+                                    <td>Ms. Thapa</td>
+                                    <td>2nd Period</td>
+                                    <td>30</td>
+                                    <td>5</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2026-09-18</td>
+                                    <td>Software Engineering</td>
+                                    <td>Mr. Neupane</td>
+                                    <td>3rd Period</td>
+                                    <td>33</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

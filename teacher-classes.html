@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Classes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h2>Smart Attendance</h2>
+                <p>Teacher Panel</p>
+            </div>
+
+
+            <nav class="sidebar-menu">
+
+                <a href="teacher.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-classes.html"
+                    class="menu-item active">
+                    <i class="fas fa-chalkboard"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="teacher-attendance.html"
+                    class="menu-item">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Take Attendance</span>
+                </a>
+
+                <a href="teacher-history.html"
+                    class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="teacher-students.html"
+                    class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher-profile.html"
+                    class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item logout"
+                    onclick="teacherLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+
+            <header class="top-header">
+
+                <div>
+                    <h1>My Classes</h1>
+                    <p>View your assigned classes</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="teacherNameDisplay">Teacher</span>
+                </div>
+
+            </header>
+
+
+            <!-- Page Content -->
+
+            <div class="dashboard-content">
+
+                <!-- Page Header -->
+
+                <div class="page-header">
+
+                    <div>
+                        <h2>Assigned Classes</h2>
+                        <p>
+                            Classes assigned to you by the administrator
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Search and Filter -->
+
+                <div class="search-section">
+
+                    <div class="search-box">
+
+                        <i class="fas fa-search"></i>
+
+                        <input
+                            type="text"
+                            id="teacherClassSearch"
+                            placeholder="Search classes..."
+                        >
+
+                    </div>
+
+
+                    <select id="teacherClassSemester">
+
+                        <option value="">
+                            All Semesters
+                        </option>
+
+                        <option value="1st">
+                            1st Semester
+                        </option>
+
+                        <option value="2nd">
+                            2nd Semester
+                        </option>
+
+                        <option value="3rd">
+                            3rd Semester
+                        </option>
+
+                        <option value="4th">
+                            4th Semester
+                        </option>
+
+                        <option value="5th">
+                            5th Semester
+                        </option>
+
+                        <option value="6th">
+                            6th Semester
+                        </option>
+
+                        <option value="7th">
+                            7th Semester
+                        </option>
+
+                        <option value="8th">
+                            8th Semester
+                        </option>
+
+                    </select>
+
+
+                    <select id="teacherClassSection">
+
+                        <option value="">
+                            All Sections
+                        </option>
+
+                        <option value="A">
+                            Section A
+                        </option>
+
+                        <option value="B">
+                            Section B
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Classes Table -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h2>My Classes</h2>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Subject</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Period</th>
+                                    <th>Room</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="teacherClassesTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item active">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Classes</h1>
+                    <p>Manage class schedules and assignments</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Class List</h2>
+                        <p>View and manage class information</p>
+                    </div>
+
+                    <button class="add-button" onclick="showClassForm()">
+                        <i class="fas fa-plus"></i>
+                        Add Class
+                    </button>
+                </div>
+
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="classSearch" placeholder="Search class...">
+                    </div>
+
+                    <select id="classSemesterFilter">
+                        <option value="">All Semesters</option>
+                        <option value="1st">1st Semester</option>
+                        <option value="2nd">2nd Semester</option>
+                        <option value="3rd">3rd Semester</option>
+                        <option value="4th">4th Semester</option>
+                        <option value="5th">5th Semester</option>
+                        <option value="6th">6th Semester</option>
+                        <option value="7th">7th Semester</option>
+                        <option value="8th">8th Semester</option>
+                    </select>
+
+                    <select id="classSectionFilter">
+                        <option value="">All Sections</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                    </select>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Subject</th>
+                                    <th>Teacher</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Period</th>
+                                    <th>Room</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="classTableBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>DBMS</td>
+                                    <td>Mr. Sharma</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>1st Period</td>
+                                    <td>Room 101</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Java Programming</td>
+                                    <td>Ms. Thapa</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>2nd Period</td>
+                                    <td>Room 101</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Software Engineering</td>
+                                    <td>Mr. Neupane</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>3rd Period</td>
+                                    <td>Room 101</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>Operating System</td>
+                                    <td>Ms. KC</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>4th Period</td>
+                                    <td>Room 101</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>Web Technology</td>
+                                    <td>Mr. Rai</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>5th Period</td>
+                                    <td>Room 101</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="class-form" id="classForm">
+                    <div class="form-card">
+
+                        <div class="card-header">
+                            <h2>Add Class</h2>
+
+                            <button type="button" class="close-button" onclick="hideClassForm()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <form id="adminClassForm">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="classSubject">Subject</label>
+                                    <select id="classSubject">
+                                        <option value="">Select subject</option>
+                                        <option value="DBMS">DBMS</option>
+                                        <option value="Java Programming">Java Programming</option>
+                                        <option value="Software Engineering">Software Engineering</option>
+                                        <option value="Operating System">Operating System</option>
+                                        <option value="Web Technology">Web Technology</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="classTeacher">Teacher</label>
+                                    <select id="classTeacher">
+                                        <option value="">Select teacher</option>
+                                        <option value="Mr. Sharma">Mr. Sharma</option>
+                                        <option value="Ms. Thapa">Ms. Thapa</option>
+                                        <option value="Mr. Neupane">Mr. Neupane</option>
+                                        <option value="Ms. KC">Ms. KC</option>
+                                        <option value="Mr. Rai">Mr. Rai</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="classSemester">Semester</label>
+                                    <select id="classSemester">
+                                        <option value="">Select semester</option>
+                                        <option value="1st">1st Semester</option>
+                                        <option value="2nd">2nd Semester</option>
+                                        <option value="3rd">3rd Semester</option>
+                                        <option value="4th">4th Semester</option>
+                                        <option value="5th">5th Semester</option>
+                                        <option value="6th">6th Semester</option>
+                                        <option value="7th">7th Semester</option>
+                                        <option value="8th">8th Semester</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="classSection">Section</label>
+                                    <select id="classSection">
+                                        <option value="">Select section</option>
+                                        <option value="A">Section A</option>
+                                        <option value="B">Section B</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="classPeriod">Period</label>
+                                    <select id="classPeriod">
+                                        <option value="">Select period</option>
+                                        <option value="1st Period - 6:55 AM">1st Period - 6:55 AM</option>
+                                        <option value="2nd Period - 7:50 AM">2nd Period - 7:50 AM</option>
+                                        <option value="3rd Period - 8:45 AM">3rd Period - 8:45 AM</option>
+                                        <option value="4th Period - 9:10 AM">4th Period - 9:10 AM</option>
+                                        <option value="5th Period - 10:05 AM">5th Period - 10:05 AM</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="classRoom">Room</label>
+                                    <input type="text" id="classRoom" placeholder="Enter room number">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Save Class
+                            </button>
+
+                            <p id="classFormMessage"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

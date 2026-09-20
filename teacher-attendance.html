@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h2>Smart Attendance</h2>
+                <p>Teacher Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="teacher.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-classes.html" class="menu-item">
+                    <i class="fas fa-chalkboard"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="teacher-attendance.html"
+                    class="menu-item active">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Take Attendance</span>
+                </a>
+
+                <a href="teacher-history.html" class="menu-item">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="teacher-students.html" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher-profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="menu-item logout"
+                    onclick="teacherLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <!-- Top Header -->
+
+            <header class="top-header">
+
+                <div>
+                    <h1>Take Attendance</h1>
+                    <p>Mark attendance for your class</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="teacherNameDisplay">Teacher</span>
+                </div>
+
+            </header>
+
+
+            <!-- Page Content -->
+
+            <div class="dashboard-content">
+
+                <!-- Attendance Selection -->
+
+                <div class="dashboard-card attendance-selection">
+
+                    <div class="card-header">
+                        <h2>Attendance Details</h2>
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendanceDate">
+                                Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="teacherAttendanceDate"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendanceSubject">
+                                Subject
+                            </label>
+
+                            <select id="teacherAttendanceSubject">
+
+                                <option value="">
+                                    Select subject
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendanceSemester">
+                                Semester
+                            </label>
+
+                            <select id="teacherAttendanceSemester">
+
+                                <option value="">
+                                    Select semester
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendanceSection">
+                                Section
+                            </label>
+
+                            <select id="teacherAttendanceSection">
+
+                                <option value="">
+                                    Select section
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendancePeriod">
+                                Period
+                            </label>
+
+                            <select id="teacherAttendancePeriod">
+
+                                <option value="">
+                                    Select period
+                                </option>
+
+                                <option value="1st Period - 6:55 AM">
+                                    1st Period - 6:55 AM
+                                </option>
+
+                                <option value="2nd Period - 7:50 AM">
+                                    2nd Period - 7:50 AM
+                                </option>
+
+                                <option value="3rd Period - 9:10 AM">
+                                    3rd Period - 9:10 AM
+                                </option>
+
+                                <option value="4th Period - 10:05 AM">
+                                    4th Period - 10:05 AM
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="teacherAttendanceRoom">
+                                Room
+                            </label>
+
+                            <select id="teacherAttendanceRoom">
+
+                                <option value="">
+                                    Select room
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="save-button"
+                        onclick="loadTeacherAttendanceStudents()">
+
+                        <i class="fas fa-users"></i>
+                        Load Students
+
+                    </button>
+
+
+                    <p id="teacherAttendanceMessage"></p>
+
+                </div>
+
+
+                <!-- Student Attendance List -->
+
+                <div
+                    class="dashboard-card teacher-attendance-list"
+                    id="teacherAttendanceListCard"
+                    style="display: none;">
+
+                    <div class="card-header">
+
+                        <h2>Student Attendance</h2>
+
+                        <div class="attendance-count">
+
+                            Present:
+                            <strong id="teacherPresentCount">
+                                0 / 0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Attendance</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="teacherAttendanceTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div class="attendance-footer">
+
+                        <p id="teacherSaveMessage"></p>
+
+                        <button
+                            type="button"
+                            class="save-button"
+                            onclick="saveTeacherAttendance()">
+
+                            <i class="fas fa-save"></i>
+                            Save Attendance
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item active">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Students</h1>
+                    <p>Manage student information</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Student List</h2>
+                        <p>View and manage registered students</p>
+                    </div>
+
+                    <button class="add-button" onclick="showStudentForm()">
+                        <i class="fas fa-plus"></i>
+                        Add Student
+                    </button>
+                </div>
+
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="studentSearch" placeholder="Search student...">
+                    </div>
+
+                    <select id="semesterFilter">
+                        <option value="">All Semesters</option>
+                        <option value="1st">1st Semester</option>
+                        <option value="2nd">2nd Semester</option>
+                        <option value="3rd">3rd Semester</option>
+                        <option value="4th">4th Semester</option>
+                        <option value="5th">5th Semester</option>
+                        <option value="6th">6th Semester</option>
+                        <option value="7th">7th Semester</option>
+                        <option value="8th">8th Semester</option>
+                    </select>
+
+                    <select id="sectionFilter">
+                        <option value="">All Sections</option>
+                        <option value="A">Section A</option>
+                        <option value="B">Section B</option>
+                    </select>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Student ID</th>
+                                    <th>Full Name</th>
+                                    <th>Semester</th>
+                                    <th>Section</th>
+                                    <th>Gmail</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="studentTableBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>BCS001</td>
+                                    <td>Aashika Pandey</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>aashika@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>BCS002</td>
+                                    <td>Riya Sharma</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>riya@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>BCS003</td>
+                                    <td>Sita Thapa</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>sita@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>BCS004</td>
+                                    <td>Anisha KC</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>anisha@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>BCS005</td>
+                                    <td>Pratiksha Rai</td>
+                                    <td>4th</td>
+                                    <td>A</td>
+                                    <td>pratiksha@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="student-form" id="studentForm">
+                    <div class="form-card">
+
+                        <div class="card-header">
+                            <h2>Add Student</h2>
+
+                            <button type="button" class="close-button" onclick="hideStudentForm()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <form id="adminStudentForm">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adminStudentName">Full Name</label>
+                                    <input type="text" id="adminStudentName" placeholder="Enter full name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="adminStudentId">Student ID / Roll No.</label>
+                                    <input type="text" id="adminStudentId" placeholder="Enter student ID">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adminSemester">Semester</label>
+                                    <select id="adminSemester">
+                                        <option value="">Select semester</option>
+                                        <option value="1st">1st Semester</option>
+                                        <option value="2nd">2nd Semester</option>
+                                        <option value="3rd">3rd Semester</option>
+                                        <option value="4th">4th Semester</option>
+                                        <option value="5th">5th Semester</option>
+                                        <option value="6th">6th Semester</option>
+                                        <option value="7th">7th Semester</option>
+                                        <option value="8th">8th Semester</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="adminSection">Section</label>
+                                    <select id="adminSection">
+                                        <option value="">Select section</option>
+                                        <option value="A">Section A</option>
+                                        <option value="B">Section B</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adminGmail">Gmail</label>
+                                    <input type="text" id="adminGmail" placeholder="Enter Gmail">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="adminPhone">Phone Number</label>
+                                    <input type="tel" id="adminPhone" placeholder="Enter phone number">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Save Student
+                            </button>
+
+                            <p id="studentFormMessage"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="cript.js"></script>
+</body>
+</html>

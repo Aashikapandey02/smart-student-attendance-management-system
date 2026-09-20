@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Attendance - Smart Attendance System</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="student.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="student-attendance.html" class="active">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>My Attendance</span>
+                </a>
+
+                <a href="student-history.html">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="student-profile.html">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="#" onclick="studentLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1>My Attendance</h1>
+                    <p>View your subject-wise attendance</p>
+                </div>
+
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="studentNameDisplay">Student</span>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <section class="dashboard-content">
+
+                <!-- Student Information -->
+                <div class="dashboard-card student-attendance-info">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Student Information</h3>
+                            <p>Your current academic information</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-info">
+
+                        <div>
+                            <span>Student Name</span>
+                            <strong id="attendanceStudentName">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Student ID</span>
+                            <strong id="attendanceStudentId">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Semester</span>
+                            <strong id="attendanceStudentSemester">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Section</span>
+                            <strong id="attendanceStudentSection">-</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Overall Attendance -->
+                <div class="stats-grid student-attendance-stats">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="myAttendanceTotal">0</h3>
+                            <p>Total Classes</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="myAttendancePresent">0</h3>
+                            <p>Present</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-times"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="myAttendanceAbsent">0</h3>
+                            <p>Absent</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+                            <h3 id="myAttendancePercentage">0%</h3>
+                            <p>Overall Attendance</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Subject Attendance -->
+                <div class="dashboard-card student-attendance-table-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Subject-wise Attendance</h3>
+                            <p>Attendance details for each subject</p>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Subject</th>
+                                    <th>Total Classes</th>
+                                    <th>Present</th>
+                                    <th>Absent</th>
+                                    <th>Percentage</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="myAttendanceTableBody">
+                                <!-- Attendance will be displayed here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- Attendance Rule -->
+                <div class="dashboard-card attendance-rule-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Attendance Rule</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        Students must maintain at least
+                        <strong>80%</strong> attendance in each subject.
+                    </p>
+
+                    <p>
+                        Attendance below 80% will be shown as
+                        <strong class="status-ng">NG</strong>.
+                    </p>
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

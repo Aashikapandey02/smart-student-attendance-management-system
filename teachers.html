@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers - Smart Attendance System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+                <p>Admin Panel</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="admin.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="students.html" class="menu-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teachers.html" class="menu-item active">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teachers</span>
+                </a>
+
+                <a href="subjects.html" class="menu-item">
+                    <i class="fas fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="classes.html" class="menu-item">
+                    <i class="fas fa-school"></i>
+                    <span>Classes</span>
+                </a>
+
+                <a href="attendance.html" class="menu-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="reports.html" class="menu-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="profile.html" class="menu-item">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Teachers</h1>
+                    <p>Manage teacher information</p>
+                </div>
+
+                <div class="admin-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Admin</span>
+                </div>
+            </header>
+
+            <section class="dashboard-content">
+
+                <div class="page-header">
+                    <div>
+                        <h2>Teacher List</h2>
+                        <p>View and manage teachers</p>
+                    </div>
+
+                    <button class="add-button" onclick="showTeacherForm()">
+                        <i class="fas fa-plus"></i>
+                        Add Teacher
+                    </button>
+                </div>
+
+                <div class="search-section">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="teacherSearch" placeholder="Search teacher...">
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.N.</th>
+                                    <th>Teacher ID</th>
+                                    <th>Teacher Name</th>
+                                    <th>Subject</th>
+                                    <th>Gmail</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="teacherTableBody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>T001</td>
+                                    <td>Mr. Sharma</td>
+                                    <td>DBMS</td>
+                                    <td>sharma@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>T002</td>
+                                    <td>Ms. Thapa</td>
+                                    <td>Java Programming</td>
+                                    <td>thapa@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>T003</td>
+                                    <td>Mr. Neupane</td>
+                                    <td>Software Engineering</td>
+                                    <td>neupane@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>4</td>
+                                    <td>T004</td>
+                                    <td>Ms. KC</td>
+                                    <td>Operating System</td>
+                                    <td>kc@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>5</td>
+                                    <td>T005</td>
+                                    <td>Mr. Rai</td>
+                                    <td>Web Technology</td>
+                                    <td>rai@gmail.com</td>
+                                    <td>98XXXXXXXX</td>
+                                    <td>
+                                        <button class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="delete-button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="teacher-form" id="teacherForm">
+                    <div class="form-card">
+
+                        <div class="card-header">
+                            <h2>Add Teacher</h2>
+
+                            <button type="button" class="close-button" onclick="hideTeacherForm()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <form id="adminTeacherForm">
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="teacherId">Teacher ID</label>
+                                    <input type="text" id="teacherId" placeholder="Enter teacher ID">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="teacherName">Teacher Name</label>
+                                    <input type="text" id="teacherName" placeholder="Enter teacher name">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="teacherSubject">Subject</label>
+                                    <select id="teacherSubject">
+                                        <option value="">Select subject</option>
+                                        <option value="DBMS">DBMS</option>
+                                        <option value="Java Programming">Java Programming</option>
+                                        <option value="Software Engineering">Software Engineering</option>
+                                        <option value="Operating System">Operating System</option>
+                                        <option value="Web Technology">Web Technology</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="teacherGmail">Gmail</label>
+                                    <input type="text" id="teacherGmail" placeholder="Enter Gmail">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="teacherPhone">Phone Number</label>
+                                    <input type="tel" id="teacherPhone" placeholder="Enter phone number">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="teacherPassword">Password</label>
+                                    <input type="password" id="teacherPassword" placeholder="Create password">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Save Teacher
+                            </button>
+
+                            <p id="teacherFormMessage"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

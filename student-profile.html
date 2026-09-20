@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - Smart Attendance System</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="student.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="student-attendance.html">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>My Attendance</span>
+                </a>
+
+                <a href="student-history.html">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="student-profile.html" class="active">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="#" onclick="studentLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1>Student Profile</h1>
+                    <p>View and update your profile information</p>
+                </div>
+
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="studentNameDisplay">Student</span>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <section class="dashboard-content">
+
+                <div class="profile-grid">
+
+                    <!-- Profile Information -->
+                    <div class="dashboard-card profile-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Profile Information</h3>
+                                <p>Your student account details</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="profile-role">
+                            <h2 id="studentProfileName">
+                                Student
+                            </h2>
+                            <p>Student</p>
+                        </div>
+
+                        <div class="profile-info">
+
+                            <div>
+                                <span>Student ID</span>
+                                <strong id="studentProfileId">
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Semester</span>
+                                <strong id="studentProfileSemester">
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Section</span>
+                                <strong id="studentProfileSection">
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Gmail</span>
+                                <strong id="studentProfileGmail">
+                                    -
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>Phone</span>
+                                <strong id="studentProfilePhone">
+                                    -
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Update Profile -->
+                    <div class="dashboard-card password-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Update Profile</h3>
+                                <p>Change your personal information</p>
+                            </div>
+                        </div>
+
+                        <form id="studentProfileForm">
+
+                            <div class="form-group">
+                                <label for="studentProfileNameInput">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="studentProfileNameInput"
+                                    placeholder="Enter your name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentProfileGmailInput">
+                                    Gmail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="studentProfileGmailInput"
+                                    placeholder="Enter your Gmail"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentProfilePhoneInput">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="studentProfilePhoneInput"
+                                    placeholder="Enter your phone number"
+                                >
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="save-button"
+                            >
+                                <i class="fas fa-save"></i>
+                                Save Changes
+                            </button>
+
+                            <p id="studentProfileMessage"></p>
+
+                        </form>
+
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="dashboard-card password-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Change Password</h3>
+                                <p>Update your account password</p>
+                            </div>
+                        </div>
+
+                        <form id="studentPasswordForm">
+
+                            <div class="form-group">
+                                <label for="studentCurrentPassword">
+                                    Current Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="studentCurrentPassword"
+                                    placeholder="Enter current password"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentNewPassword">
+                                    New Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="studentNewPassword"
+                                    placeholder="Enter new password"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentConfirmPassword">
+                                    Confirm New Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="studentConfirmPassword"
+                                    placeholder="Confirm new password"
+                                >
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="save-button"
+                            >
+                                <i class="fas fa-key"></i>
+                                Change Password
+                            </button>
+
+                            <p id="studentPasswordMessage"></p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

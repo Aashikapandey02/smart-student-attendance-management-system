@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Profile - Smart Attendance System</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2>Smart Attendance</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="teacher.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="teacher-classes.html">
+                    <i class="fas fa-book"></i>
+                    <span>My Classes</span>
+                </a>
+
+                <a href="teacher-attendance.html">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Take Attendance</span>
+                </a>
+
+                <a href="teacher-history.html">
+                    <i class="fas fa-history"></i>
+                    <span>Attendance History</span>
+                </a>
+
+                <a href="teacher-students.html">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="teacher-profile.html" class="active">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <a href="#" onclick="teacherLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h1>Teacher Profile</h1>
+                    <p>View and update your profile information</p>
+                </div>
+
+                <div class="user-profile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="teacherNameDisplay">Teacher</span>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <section class="dashboard-content">
+
+                <div class="profile-grid">
+
+                    <!-- Profile Information -->
+                    <div class="dashboard-card profile-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Profile Information</h3>
+                                <p>Your teacher account details</p>
+                            </div>
+                        </div>
+
+                        <div class="profile-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="profile-role">
+                            <h2 id="teacherProfileName">Teacher</h2>
+                            <p>Teacher</p>
+                        </div>
+
+                        <div class="profile-info">
+                            <div>
+                                <span>Teacher ID</span>
+                                <strong id="teacherProfileId">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Subject</span>
+                                <strong id="teacherProfileSubject">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Gmail</span>
+                                <strong id="teacherProfileGmail">-</strong>
+                            </div>
+
+                            <div>
+                                <span>Phone</span>
+                                <strong id="teacherProfilePhone">-</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Update Profile -->
+                    <div class="dashboard-card password-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Update Profile</h3>
+                                <p>Change your personal information</p>
+                            </div>
+                        </div>
+
+                        <form id="teacherProfileForm">
+
+                            <div class="form-group">
+                                <label for="teacherProfileNameInput">
+                                    Teacher Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="teacherProfileNameInput"
+                                    placeholder="Enter teacher name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="teacherProfileGmailInput">
+                                    Gmail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="teacherProfileGmailInput"
+                                    placeholder="Enter Gmail"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="teacherProfilePhoneInput">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="teacherProfilePhoneInput"
+                                    placeholder="Enter phone number"
+                                >
+                            </div>
+
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-save"></i>
+                                Save Changes
+                            </button>
+
+                            <p id="teacherProfileMessage"></p>
+
+                        </form>
+
+                    </div>
+
+                    <!-- Change Password -->
+                    <div class="dashboard-card password-card">
+
+                        <div class="card-header">
+                            <div>
+                                <h3>Change Password</h3>
+                                <p>Update your account password</p>
+                            </div>
+                        </div>
+
+                        <form id="teacherPasswordForm">
+
+                            <div class="form-group">
+                                <label for="teacherCurrentPassword">
+                                    Current Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="teacherCurrentPassword"
+                                    placeholder="Enter current password"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="teacherNewPassword">
+                                    New Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="teacherNewPassword"
+                                    placeholder="Enter new password"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="teacherConfirmPassword">
+                                    Confirm New Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="teacherConfirmPassword"
+                                    placeholder="Confirm new password"
+                                >
+                            </div>
+
+                            <button type="submit" class="save-button">
+                                <i class="fas fa-key"></i>
+                                Change Password
+                            </button>
+
+                            <p id="teacherPasswordMessage"></p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
